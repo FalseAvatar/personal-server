@@ -1,6 +1,6 @@
 import express from "express";
 import activityLogger from "./middleware/activityLogger";
-import PostRoutes from "./routs/PostRoutes";
+import ArticleRoutes from "./routs/ArticleRoutes";
 import { config } from "dotenv";
 import cors, { CorsOptions } from "cors";
 
@@ -17,6 +17,6 @@ app.use(activityLogger);
 app.use(express.json());
 const port = process.env.PORT;
 
-app.use("/posts", PostRoutes);
+app.use("/Articles", ArticleRoutes);
 
 app.listen(port, () => console.log(`Personally is listening on port ${port}`));
