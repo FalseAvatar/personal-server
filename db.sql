@@ -3,9 +3,9 @@ DROP DATABASE IF EXISTS Blog;
 CREATE DATABASE Blog;
 
 
-DROP TABLE IF EXISTS posts;
-CREATE TABLE IF NOT EXISTS posts(
-    post_id BIGSERIAL PRIMARY KEY NOT NULL,
+DROP TABLE IF EXISTS articles;
+CREATE TABLE IF NOT EXISTS articles(
+    article_id BIGSERIAL PRIMARY KEY NOT NULL,
     title VARCHAR(100) NOT NULL,
     intro VARCHAR(250) NOT NULL,
     article TEXT
@@ -24,7 +24,7 @@ VALUES
     ('Jane Dev', 'jane.dev@gmail.com'),
     ('Rob Glob', 'rob_glob@gmail.com');
 
-INSERT INTO posts(title, intro, article)
+INSERT INTO articles(title, intro, article)
 VALUES
     ('Lorem Ipsum', 
      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',

@@ -1,5 +1,5 @@
-export class Post {
-  post_id: number | null;
+export class Article {
+  article_id: number | null;
   title: string;
   intro: string;
   article: string;
@@ -10,11 +10,11 @@ export class Post {
     intro: string,
     article: string
   ) {
-    this.post_id = post_id;
+    this.article_id = post_id;
     this.title = title;
     this.intro = intro;
     this.article = article;
   }
 }
 
-export default Post;
+export default Article;
