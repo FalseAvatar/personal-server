@@ -7,9 +7,9 @@ export class ArticleAccessData implements DataAccess<Article> {
     const query = "SELECT * FROM Articles WHERE Article_id = $1;";
     const result = await pool.query(query, [articleId]);
 
-    // if (result.rows.length === 0) {
-    //   throw Error("No Articles exist");
-    // }
+    if (result.rows.length === 0) {
+      throw Error("No Articles exist");
+    }
     console.log(result.rows[0]);
     return result.rows[0];
   }

@@ -9,13 +9,13 @@ export class ArticleBl {
   }
 
   async getArticle(id: number): Promise<Article> {
-    // try {
-    //   const Article = await this.articleDataAccess.get(id);
-    //   return Article;
-    // } catch (error) {
-    //   throw new Error(`Article ${id} not found`);
-    // }
-    return await this.articleDataAccess.get(id);
+    try {
+      const Article = await this.articleDataAccess.get(id);
+      return Article;
+    } catch (error) {
+      throw new Error(`Article ${id} not found`);
+    }
+    // return await this.articleDataAccess.get(id);
   }
 
   async getAllArticles(): Promise<Article[]> {
@@ -30,18 +30,24 @@ export class ArticleBl {
   async addArticle(article: Article): Promise<void> {
     try {
       await this.articleDataAccess.add(article);
-    } catch {}
+    } catch {
+      `Article could not be added`;
+    }
   }
 
   async updateArticle(id: number, updateData: Partial<Article>): Promise<void> {
     try {
       await this.articleDataAccess.update(id, updateData);
-    } catch {}
+    } catch {
+      `Article could not be updated`;
+    }
   }
 
   async deleteArticle(id: number): Promise<void> {
     try {
       await this.articleDataAccess.delete(id);
-    } catch {}
+    } catch {
+      `Article could not be deleted`;
+    }
   }
 }

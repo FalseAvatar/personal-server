@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import Article from "../models/Article";
 import { ArticleBl } from "../BL/ArticleBL";
 
 export class ArticleController {
