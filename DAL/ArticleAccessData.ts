@@ -4,7 +4,7 @@ import pool from "../dbPool";
 
 export class ArticleAccessData implements DataAccess<Article> {
   async get(articleId: number): Promise<Article> {
-    const query = "SELECT * FROM Articles WHERE Article_id = $1;";
+    const query = "SELECT * FROM articles WHERE article_id = $1;";
     const result = await pool.query(query, [articleId]);
 
     if (result.rows.length === 0) {
@@ -16,7 +16,7 @@ export class ArticleAccessData implements DataAccess<Article> {
 
   async getAll(): Promise<Article[]> {
     const query = "SELECT * FROM articles;";
-    const result = await pool.query(query);
+    const result = await pool.query(query, []);
 
     if (result.rowCount === 0) {
       throw Error("No articles exist");

@@ -10,8 +10,8 @@ export class ArticleBl {
 
   async getArticle(id: number): Promise<Article> {
     try {
-      const Article = await this.articleDataAccess.get(id);
-      return Article;
+      const article = await this.articleDataAccess.get(id);
+      return article;
     } catch (error) {
       throw new Error(`Article ${id} not found`);
     }

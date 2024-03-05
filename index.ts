@@ -17,6 +17,6 @@ app.use(activityLogger);
 app.use(express.json());
 const port = process.env.PORT;
 
-app.use("/Articles", ArticleRoutes);
+app.use("/Read", ArticleRoutes);
 
 app.listen(port, () => console.log(`Personally is listening on port ${port}`));
